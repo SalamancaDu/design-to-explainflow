@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1020" viewBox="0 0 1440 1020" role="img" aria-labelledby="title desc">
+<title id="title">四条生产路线</title>
+<desc id="desc">横向区分整图控制与准确内容或独立元素控制，纵向区分静态和动效交付。A 静态整图；B 可编辑静态合成；C 整帧动效；D 逐元素动效。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC","PingFang SC",sans-serif}.mono{font-family:Consolas,monospace}.serif{font-family:Georgia,serif}</style>
+<rect width="1440" height="1020" fill="#F8F7F1"/>
+<text x="70" y="76" fill="#355744" class="mono" font-size="18" letter-spacing="2">CHOOSE THE OUTPUT. CHOOSE THE CONTROL.</text>
+<text x="66" y="145" fill="#263E2E" font-size="48" font-weight="700">先确定交付，再确定控制范围</text>
+<text x="70" y="194" fill="#626D59" font-size="23">一个需求选择一条路线；已有资产可在需要时继续转入动效。</text>
+<rect x="70" y="270" width="630" height="290" fill="#ECEFE3"/>
+<rect x="720" y="270" width="650" height="290" fill="#F0EADB"/>
+<rect x="70" y="580" width="630" height="290" fill="#E3EADD"/>
+<rect x="720" y="580" width="650" height="290" fill="#EAE6D9"/>
+<text x="90" y="246" fill="#55674C" font-size="20">整图控制</text>
+<text x="740" y="246" fill="#756645" font-size="20">准确内容 / 内部元素独立控制</text>
+<text x="102" y="367" fill="#456B4F" class="serif" font-size="78">A</text><text x="184" y="323" fill="#6B735F" class="mono" font-size="15">STATIC / COMPLETE IMAGE</text><text x="182" y="372" fill="#263E2E" font-size="33" font-weight="700">静态整图</text><path d="M102 400H657" stroke="#BEC5B0"/><text x="102" y="442" fill="#505D46" font-size="22">氛围、构图与主视觉</text><text x="102" y="478" fill="#505D46" font-size="22">需要新位图时生成，也可复用已有素材</text><text x="102" y="514" fill="#505D46" font-size="22">交付：完整静帧 / 所需提示词</text><text x="752" y="367" fill="#926B3D" class="serif" font-size="78">B</text><text x="834" y="323" fill="#6B735F" class="mono" font-size="15">STATIC / EDITABLE COMPOSITE</text><text x="832" y="372" fill="#263E2E" font-size="33" font-weight="700">可编辑静态合成</text><path d="M752 400H1307" stroke="#BEC5B0"/><text x="752" y="442" fill="#505D46" font-size="22">准确文字、数据与可替换元素</text><text x="752" y="478" fill="#505D46" font-size="22">精确排版与绘图，检查真实内容合成稿</text><text x="752" y="514" fill="#505D46" font-size="22">交付：静态图 / 所需可编辑源文件</text><text x="102" y="677" fill="#456B4F" class="serif" font-size="78">C</text><text x="184" y="633" fill="#6B735F" class="mono" font-size="15">MOTION / WHOLE FRAME</text><text x="182" y="682" fill="#263E2E" font-size="33" font-weight="700">整帧动效</text><path d="M102 710H657" stroke="#BEC5B0"/><text x="102" y="752" fill="#505D46" font-size="22">整图推拉、裁切、遮罩或叠加</text><text x="102" y="788" fill="#505D46" font-size="22">一张图片即可，无需为整帧运动拆层</text><text x="102" y="824" fill="#505D46" font-size="22">交付：所需预览 / 成片 / 源文件</text><text x="752" y="677" fill="#926B3D" class="serif" font-size="78">D</text><text x="834" y="633" fill="#6B735F" class="mono" font-size="15">MOTION / ELEMENT LEVEL</text><text x="832" y="682" fill="#263E2E" font-size="33" font-weight="700">逐元素动效</text><path d="M752 710H1307" stroke="#BEC5B0"/><text x="752" y="752" fill="#505D46" font-size="22">主体、标题或图表需要独立变化</text><text x="752" y="788" fill="#505D46" font-size="22">运动意图 → 静态合成 → 详细动作</text><text x="752" y="824" fill="#505D46" font-size="22">交付：可控元素 / 所需动画产物</text>
+<path d="M70 914H1370" stroke="#CDD0C2"/>
+<text x="70" y="956" fill="#526148" font-size="22">改日期不需要动画。整图推近不需要拆层。关键文字和数据需要可靠控制。</text>
+</svg>

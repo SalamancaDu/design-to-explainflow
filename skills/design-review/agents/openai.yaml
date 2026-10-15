@@ -1,0 +1,6 @@
+interface:
+  display_name: "Design Review"
+  short_description: "Review artifact quality and concrete next-stage issues"
+  default_prompt: "Use $design-review to assess actual content, visual quality and stage readiness, report supported repairs, and keep optional scoring and learning value separate."
+policy:
+  allow_implicit_invocation: true

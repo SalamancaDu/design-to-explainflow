@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-labelledby="art-title art-desc">
+<title id="art-title">每滴有数，用水分配演示图</title>
+<desc id="art-desc">演示数据：洗浴40份，厨房30份，洗衣20份，其他10份，共100份，不代表真实统计。</desc>
+<rect id="paper" width="1920" height="1080" fill="#F7F5EF"/>
+<g fill="#20261F" font-family="Microsoft YaHei, sans-serif">
+  <text id="edition" x="120" y="130" font-size="30" letter-spacing="2">2026.10 · 演练版</text>
+  <text id="headline" x="120" y="310" font-size="132" font-weight="700">每滴有数</text>
+  <text id="subtitle" x="126" y="390" font-size="39">100份水，用到哪里？</text>
+  <text id="total" x="112" y="735" font-size="310" font-weight="700" fill="#39745D">100</text>
+  <text id="unit" x="710" y="725" font-size="60">份</text>
+  <path d="M126 790 H800" stroke="#B5B9A9" stroke-width="2"/>
+  <text id="takeaway" x="126" y="850" font-size="34">先看去向，再谈节约</text>
+  <text id="chart-heading" x="1040" y="205" font-size="30" fill="#59634E">分配示意 / 合计 100 份</text>
+  <g id="row-bath" data-value="40">
+  <rect id="focus-bath" x="1000" y="260" width="800" height="126" rx="16" fill="#E1EADB" opacity="0"/>
+  <text id="label-bath" x="1040" y="300" font-size="37">洗浴</text>
+  <rect x="1040" y="325" width="600" height="38" fill="#E5E3D8"/>
+  <rect id="bar-bath" x="1040" y="325" width="480" height="38" fill="#39745D"/>
+  <text id="value-bath" x="1690" y="361" font-size="45" font-weight="700">40<tspan font-size="26"> 份</tspan></text>
+</g><g id="row-kitchen" data-value="30">
+  <rect id="focus-kitchen" x="1000" y="405" width="800" height="126" rx="16" fill="#E1EADB" opacity="0"/>
+  <text id="label-kitchen" x="1040" y="445" font-size="37">厨房</text>
+  <rect x="1040" y="470" width="600" height="38" fill="#E5E3D8"/>
+  <rect id="bar-kitchen" x="1040" y="470" width="360" height="38" fill="#39745D"/>
+  <text id="value-kitchen" x="1690" y="506" font-size="45" font-weight="700">30<tspan font-size="26"> 份</tspan></text>
+</g><g id="row-laundry" data-value="20">
+  <rect id="focus-laundry" x="1000" y="550" width="800" height="126" rx="16" fill="#E1EADB" opacity="0"/>
+  <text id="label-laundry" x="1040" y="590" font-size="37">洗衣</text>
+  <rect x="1040" y="615" width="600" height="38" fill="#E5E3D8"/>
+  <rect id="bar-laundry" x="1040" y="615" width="240" height="38" fill="#39745D"/>
+  <text id="value-laundry" x="1690" y="651" font-size="45" font-weight="700">20<tspan font-size="26"> 份</tspan></text>
+</g><g id="row-other" data-value="10">
+  <rect id="focus-other" x="1000" y="695" width="800" height="126" rx="16" fill="#E1EADB" opacity="0"/>
+  <text id="label-other" x="1040" y="735" font-size="37">其他</text>
+  <rect x="1040" y="760" width="600" height="38" fill="#E5E3D8"/>
+  <rect id="bar-other" x="1040" y="760" width="120" height="38" fill="#39745D"/>
+  <text id="value-other" x="1690" y="796" font-size="45" font-weight="700">10<tspan font-size="26"> 份</tspan></text>
+</g>
+  <path d="M120 930 H1800" stroke="#B5B9A9" stroke-width="2"/>
+  <text id="disclaimer" x="120" y="990" font-size="30">演示数据 · 不代表真实用水统计</text>
+  <text id="scale-note" x="1800" y="990" text-anchor="end" font-size="26" fill="#59634E">同一尺度 · 每行满格为50份</text>
+</g>
+</svg>

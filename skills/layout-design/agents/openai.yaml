@@ -1,0 +1,4 @@
+interface:
+  display_name: "Layout Design"
+  short_description: "Layout rules for clear visual hierarchy"
+  default_prompt: "Use $layout-design to preserve exact content, choose the production route, and define hierarchy, placement and handoff; use title-text-design only for custom lettering."

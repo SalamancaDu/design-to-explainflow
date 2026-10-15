@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "purpose": "handoff",
+  "layoutSource": "../../preview.html",
+  "coordinateSpace": "canvas-px",
+  "positionOrigin": "top-left",
+  "pathBase": "manifest-directory",
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "staticSnapshot": "../../B/static-export.svg",
+  "sourceNote": "preview.html中base-layout模板为静态布局；本manifest不被运行时读取。各ID为该布局内的SVG元素ID。",
+  "dataBasis": {
+    "nature": "synthetic-demo",
+    "unit": "份",
+    "source": "本次工作流试跑自拟数据，无现实统计含义",
+    "values": [
+      {
+        "id": "bath",
+        "label": "洗浴",
+        "value": 40
+      },
+      {
+        "id": "kitchen",
+        "label": "厨房",
+        "value": 30
+      },
+      {
+        "id": "laundry",
+        "label": "洗衣",
+        "value": 20
+      },
+      {
+        "id": "other",
+        "label": "其他",
+        "value": 10
+      }
+    ],
+    "mapping": {
+      "x": 1040,
+      "maxValue": 50,
+      "plotWidth": 600,
+      "pxPerUnit": 12
+    }
+  },
+  "audio": {
+    "mode": "silent",
+    "durationSeconds": 8,
+    "timingStatus": "fixed-for-this-brief"
+  },
+  "elements": [
+    {
+      "id": "focus-bath",
+      "type": "svg-rect",
+      "sourceSelector": "#focus-bath",
+      "x": 1000,
+      "y": 260,
+      "width": 800,
+      "height": 126,
+      "anchor": "top-left",
+      "zIndex": 1,
+      "fill": "#E1EADB",
+      "initialOpacity": 0,
+      "motionRole": "independent row emphasis; do not change chart geometry"
+    },
+    {
+      "id": "focus-kitchen",
+      "type": "svg-rect",
+      "sourceSelector": "#focus-kitchen",
+      "x": 1000,
+      "y": 405,
+      "width": 800,
+      "height": 126,
+      "anchor": "top-left",
+      "zIndex": 1,
+      "fill": "#E1EADB",
+      "initialOpacity": 0,
+      "motionRole": "independent row emphasis; do not change chart geometry"
+    },
+    {
+      "id": "focus-laundry",
+      "type": "svg-rect",
+      "sourceSelector": "#focus-laundry",
+      "x": 1000,
+      "y": 550,
+      "width": 800,
+      "height": 126,
+      "anchor": "top-left",
+      "zIndex": 1,
+      "fill": "#E1EADB",
+      "initialOpacity": 0,
+      "motionRole": "independent row emphasis; do not change chart geometry"
+    },
+    {
+      "id": "focus-other",
+      "type": "svg-rect",
+      "sourceSelector": "#focus-other",
+      "x": 1000,
+      "y": 695,
+      "width": 800,
+      "height": 126,
+      "anchor": "top-left",
+      "zIndex": 1,
+      "fill": "#E1EADB",
+      "initialOpacity": 0,
+      "motionRole": "independent row emphasis; do not change chart geometry"
+    }
+  ]
+}

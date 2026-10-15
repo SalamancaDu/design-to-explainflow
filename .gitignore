@@ -1,0 +1,16 @@
+# Local work and generated production output
+/runs/
+/outputs/
+/.local/
+/dist/
+/node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

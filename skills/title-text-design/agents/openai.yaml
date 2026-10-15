@@ -1,0 +1,6 @@
+interface:
+  display_name: "Title Text Design"
+  short_description: "设计标题字、主叙事符号、逐字字形、生成前门禁和透明 PNG 工作流"
+  default_prompt: "Use $title-text-design to complete the requested title prompt or asset with a fitting font skeleton, deliberate glyph structure and theme symbol; explore alternatives only when needed and preserve existing review choices."
+policy:
+  allow_implicit_invocation: true

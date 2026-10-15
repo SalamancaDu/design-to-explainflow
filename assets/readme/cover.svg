@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="660" viewBox="0 0 1440 660" role="img" aria-labelledby="title desc">
+<title id="title">design-to-explainflow｜科普视频工作流</title>
+<desc id="desc">从信息设计到科普视频的 AI 创作工作流。五个 Skill 连接版式、视觉素材、标题字、动效与质量审阅，为剪辑提供清晰、准确、可复用的资产。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC","PingFang SC",sans-serif}.mono{font-family:Consolas,monospace}.serif{font-family:Georgia,serif}</style>
+<rect width="1440" height="660" fill="#F5F2E9"/>
+<path d="M44 74V44H74M1366 44H1396V74M44 586V616H74M1366 616H1396V586" fill="none" stroke="#B6BAAA" stroke-width="1.5"/>
+<text x="76" y="99" fill="#355744" font-size="27" font-weight="700" letter-spacing="1">design-to-explainflow</text>
+<text x="1362" y="98" text-anchor="end" fill="#66705E" font-size="17" letter-spacing="2">DESIGN / EXPLAIN / CREATE</text>
+<path d="M76 125H1364" stroke="#CBCDBF"/>
+<text x="74" y="253" fill="#243C2D" font-size="88" font-weight="700" letter-spacing="-2">科普视频工作流</text>
+<text x="79" y="314" fill="#474F41" font-size="31">从信息设计到科普视频的 AI 创作工作流</text>
+<text x="80" y="387" fill="#6B735F" font-size="24">让每一帧清晰，让每一次交接准确。</text>
+<g transform="translate(1010 176)">
+  <path d="M24 35L278 6L346 218L92 247Z" fill="#DDE4D6" stroke="#8D9D83" stroke-width="1.5"/>
+  <path d="M-4 80L284 50L316 282L28 312Z" fill="#E7E1CD" stroke="#B1A47D" stroke-width="1.5"/>
+  <rect x="-44" y="115" width="300" height="216" rx="3" fill="#FCFBF5" stroke="#345B43" stroke-width="2"/>
+  <path d="M-28 131H0M-28 131V159M212 131H240M240 131V159M-28 287V315H0M212 315H240V287" stroke="#B4BCAE" fill="none"/>
+  <text x="-4" y="208" class="serif" font-size="65" fill="#294F39" font-weight="700">Aa</text>
+  <circle cx="179" cy="180" r="24" fill="#BB6E50"/>
+  <path d="M-3 239H78M-3 259H121M-3 279H163" stroke="#718A65" stroke-width="9"/>
+  <path d="M276 108C358 124 359 239 306 285" stroke="#A36740" fill="none" stroke-width="2.5"/>
+  <path d="M306 285L308 263M306 285L327 281" stroke="#A36740" fill="none" stroke-width="2.5"/>
+</g>
+<path d="M76 482H1364" stroke="#CBCDBF"/>
+<text x="80" y="535" fill="#6B735F" font-size="15" letter-spacing="1.5">FIVE SKILLS. CONNECTED BY INTENT.</text>
+<g fill="#34533F" font-size="22" font-weight="600">
+  <text x="80" y="581">版式</text><text x="316" y="581">视觉素材</text><text x="598" y="581">标题字</text>
+  <text x="870" y="581">动效</text><text x="1103" y="581">质量审阅</text>
+</g>
+<g stroke="#A5AF99" fill="none" stroke-width="1.5">
+  <path d="M183 573H269M263 568L269 573L263 578"/>
+  <path d="M461 573H552M546 568L552 573L546 578"/>
+  <path d="M727 573H820M814 568L820 573L814 578"/>
+  <path d="M978 573H1062M1056 568L1062 573L1056 578"/>
+</g>
+</svg>

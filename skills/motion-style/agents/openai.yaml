@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Style"
+  short_description: "Motion timing and readiness for short video"
+  default_prompt: "Use $motion-style for early movement intent or detailed choreography, matching whole-frame versus element-level control and handing off to the selected implementation."

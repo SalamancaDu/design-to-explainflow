@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "artifact_checks": [
+    "Exact copy, synthetic-data label, total and quantitative geometry",
+    "Static SVG export matches authoritative HTML layout",
+    "Manifest paths, identifiers, coordinates, data basis and silent timing",
+    "Captured B date edit preserves geometry and reaches D",
+    "Captured C image coverage and measured text bounds remain inside crop",
+    "Captured D keyframes, reverse seek, real playback endpoint and generation boundary"
+  ],
+  "negative_cases": [
+    "Wrong bar length rejected",
+    "Missing element target rejected",
+    "Planned but nonexistent asset rejected"
+  ],
+  "evidence_scope": "Static artifacts and previously captured browser observations; not a fresh browser run, generated-image test or video-render test."
+}

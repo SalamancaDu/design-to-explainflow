@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Style"
+  short_description: "Style for non-typographic video assets"
+  default_prompt: "Use $image-style to define non-typographic art direction and needed assets for the selected route, preserving exact data and using native transparency when available."

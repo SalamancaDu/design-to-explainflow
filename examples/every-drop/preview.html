@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每滴有数 · 四路由试跑</title>
+<style>
+:root{color-scheme:light;font-family:"Microsoft YaHei",sans-serif;background:#eeece4;color:#20261f}
+*{box-sizing:border-box}body{margin:0;padding:28px 32px 48px}main{max-width:1120px;margin:auto}
+h1{font-size:28px;margin:0 0 8px}p{line-height:1.7;margin:8px 0}small,.muted{color:#5b6454}
+nav{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 14px}button,input{font:inherit}
+button{border:1px solid #a4af98;background:transparent;border-radius:6px;padding:10px 17px;color:inherit;cursor:pointer}
+button[aria-pressed="true"],button.primary{background:#39745d;color:white;border-color:#39745d}
+button:disabled{cursor:default;opacity:.55}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #c87e31;outline-offset:3px}
+[hidden]{display:none!important}.stage{aspect-ratio:16/9;background:#f7f5ef;overflow:hidden;position:relative;border:1px solid #d2d5c8}
+.stage>svg,.stage>img{width:100%;height:100%;display:block}.stage>img{object-fit:contain;transform-origin:50% 50%}
+.a-panel{padding:30px;background:#f7f5ef;border:1px solid #d2d5c8}.a-panel h2{font-size:23px}
+.a-panel .scope{display:inline-block;color:#39745d;border-bottom:3px solid #39745d;padding:6px 0}
+.controls{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:16px 0}
+input[type=range]{flex:1;min-width:170px;accent-color:#39745d}input[type=number]{width:85px;padding:8px;border:1px solid #a4af98;background:#fffdf7}input[type=text]{max-width:100%;padding:9px;border:1px solid #a4af98;border-radius:4px;background:#fffdf7}
+output{font-variant-numeric:tabular-nums;min-width:100px}.notes{border-top:1px solid #b9c0af;margin-top:18px;padding-top:12px}
+a{color:#285e49;text-underline-offset:3px}#status{min-height:26px}#route-caption{font-size:18px;font-weight:700;margin:14px 0}
+@media(max-width:600px){body{padding:18px 14px}h1{font-size:23px}nav{gap:6px}button{padding:9px 12px}.a-panel{padding:18px}.controls{gap:10px}}
+</style>
+<main>
+<h1>每滴有数</h1><p class="muted">同一主题，四种交付要求。演示数据，不代表真实用水统计。仅本地设计与浏览器预览。</p>
+<nav aria-label="切换路由"><button data-route="A" aria-pressed="false">A 静态整图</button><button data-route="B" aria-pressed="true">B 可编辑静态</button><button data-route="C" aria-pressed="false">C 整帧动效</button><button data-route="D" aria-pressed="false">D 逐元素动效</button></nav>
+<p id="route-caption">B · 准确文字与图形保持可编辑</p>
+<section id="panel-A" class="a-panel" hidden><span class="scope">已完成生成前交接 · 未执行生图</span><h2>无文字的用水主题氛围图</h2><p>暖纸白、低饱和绿、水滴主符号与左侧留白。没有准确文字或定量图形，因此保留 A 路由。</p><p>layout-design → image-style → 提示词检查。需要加入40/30/20/10的准确关系时，转B制作。</p><p><a href="A/image-prompt.md">查看完整生成提示词</a></p><p class="muted">没有伪造生成图或资产路径；图像质量与透明像素均未验收。</p></section>
+<section id="panel-B" class="stage" aria-label="可编辑静态合成"></section>
+<section id="panel-C" class="stage" aria-label="整帧动效预览" hidden><img id="flat-frame" alt="每滴有数的完整静帧，整体缓慢推近"></section>
+<section id="panel-D" class="stage" aria-label="逐元素动效预览" hidden></section>
+<div id="edit-controls" class="controls"><label for="edition-input">试改日期 / 版本</label><input id="edition-input" type="text" maxlength="24" value="2026.10 · 演练版"><button id="reset-edition">恢复原文</button><small>仅改变当前预览；未写回源文件。</small></div>
+<div id="time-controls" class="controls" hidden><button id="play" class="primary">播放</button><button id="restart">回到开头</button><label for="time">预览时间</label><input id="time" type="range" min="0" max="6" step="0.05" value="0"><label for="time-number">定位秒数</label><input id="time-number" type="number" min="0" max="6" step="0.05" value="0"><output id="time-label" for="time">0.00 / 6秒</output></div>
+<p id="status" role="status" aria-live="polite">静态文件与网页源均已生成。</p>
+<div class="notes"><p id="route-note"></p><p><a href="brief.md">案例输入</a> · <a href="B/static-export.svg">初始静态导出</a> · <a href="title/title-prompt.md">定制标题提示词分支</a> · <a href="scenes/d01/scene.manifest.json">D 交接 manifest</a> · <a href="review.md">试跑记录</a></p><small>不调用生成服务，不进行视频编码或渲染。预览页面不等于成片验收。</small></div>
+</main>
+<script type="application/json" id="case-data">{"title": "每滴有数", "subtitle": "100份水，用到哪里？", "edition": "2026.10 · 演练版", "note": "演示数据 · 不代表真实用水统计", "source": "本次工作流试跑自拟数据，无现实统计含义", "unit": "份", "total": 100, "canvas": {"width": 1920, "height": 1080}, "data": [{"id": "bath", "label": "洗浴", "value": 40}, {"id": "kitchen", "label": "厨房", "value": 30}, {"id": "laundry", "label": "洗衣", "value": 20}, {"id": "other", "label": "其他", "value": 10}], "mapping": {"x": 1040, "maxValue": 50, "plotWidth": 600, "pxPerUnit": 12}, "audioMode": "silent", "durations": {"C": 6, "D": 8}, "paidGeneration": false, "videoExport": false}</script>
+<template id="base-layout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-labelledby="art-title art-desc">
+<title id="art-title">每滴有数，用水分配演示图</title>
+<desc id="art-desc">演示数据：洗浴40份，厨房30份，洗衣20份，其他10份，共100份，不代表真实统计。</desc>
+<rect id="paper" width="1920" height="1080" fill="#F7F5EF"/>
+<g fill="#20261F" font-family="Microsoft YaHei, sans-serif">
+  <text id="edition" x="120" y="130" font-size="30" letter-spacing="2">2026.10 · 演练版</text>
+  <text id="headline" x="120" y="310" font-size="132" font-weight="700">每滴有数</text>
+  <text id="subtitle" x="126" y="390" font-size="39">100份水，用到哪里？</text>
+  <text id="total" x="112" y="735" font-size="310" font-weight="700" fill="#39745D">100</text>
+  <text id="unit" x="710" y="725" font-size="60">份</text>
+  <path d="M126 790 H800" stroke="#B5B9A9" stroke-width="2"/>
+  <text id="takeaway" x="126" y="850" font-size="34">先看去向，再谈节约</text>
+  <text id="chart-heading" x="1040" y="205" font-size="30" fill="#59634E">分配示意 / 合计 100 份</text>
+  <g id="row-bath" data-value="40">
+  <rect id="focus-bath" x="1000" y="260" width="800" height="126" rx="16" fill="#E1EADB" opacity="0"/>
+  <text id="label-bath" x="1040" y="300" font-size="37">洗浴</text>
+  <rect x="1040" y="325" width="600" height="38" fill="#E5E3D8"/>
+  <rect id="bar-bath" x="1040" y="325" width="480" height="38" fill="#39745D"/>
+  <text id="value-bath" x="1690" y="361" font-size="45" font-weight="700">40<tspan font-size="26"> 份</tspan></text>
+</g><g id="row-kitchen" data-value="30">
+  <rect id="focus-kitchen" x="1000" y="405" width="800" height="126" rx="16" fill="#E1EADB" opacity="0"/>
+  <text id="label-kitchen" x="1040" y="445" font-size="37">厨房</text>
+  <rect x="1040" y="470" width="600" height="38" fill="#E5E3D8"/>
+  <rect id="bar-kitchen" x="1040" y="470" width="360" height="38" fill="#39745D"/>
+  <text id="value-kitchen" x="1690" y="506" font-size="45" font-weight="700">30<tspan font-size="26"> 份</tspan></text>
+</g><g id="row-laundry" data-value="20">
+  <rect id="focus-laundry" x="1000" y="550" width="800" height="126" rx="16" fill="#E1EADB" opacity="0"/>
+  <text id="label-laundry" x="1040" y="590" font-size="37">洗衣</text>
+  <rect x="1040" y="615" width="600" height="38" fill="#E5E3D8"/>
+  <rect id="bar-laundry" x="1040" y="615" width="240" height="38" fill="#39745D"/>
+  <text id="value-laundry" x="1690" y="651" font-size="45" font-weight="700">20<tspan font-size="26"> 份</tspan></text>
+</g><g id="row-other" data-value="10">
+  <rect id="focus-other" x="1000" y="695" width="800" height="126" rx="16" fill="#E1EADB" opacity="0"/>
+  <text id="label-other" x="1040" y="735" font-size="37">其他</text>
+  <rect x="1040" y="760" width="600" height="38" fill="#E5E3D8"/>
+  <rect id="bar-other" x="1040" y="760" width="120" height="38" fill="#39745D"/>
+  <text id="value-other" x="1690" y="796" font-size="45" font-weight="700">10<tspan font-size="26"> 份</tspan></text>
+</g>
+  <path d="M120 930 H1800" stroke="#B5B9A9" stroke-width="2"/>
+  <text id="disclaimer" x="120" y="990" font-size="30">演示数据 · 不代表真实用水统计</text>
+  <text id="scale-note" x="1800" y="990" text-anchor="end" font-size="26" fill="#59634E">同一尺度 · 每行满格为50份</text>
+</g>
+</svg></template>
+<script>
+'use strict';
+const config=JSON.parse(document.getElementById('case-data').textContent);
+const base=document.getElementById('base-layout').content.querySelector('svg');
+let route='B', time=0, playing=false, lastStamp=0, frameRequest=0, flatUrl=null;
+const slider=document.getElementById('time');
+const playButton=document.getElementById('play');
+const captions={A:'A · 无文字的氛围整图，交付到提示词',B:'B · 准确文字与图形保持可编辑',C:'C · 单个整帧对象，6秒无声推近',D:'D · 独立元素，8秒无声逐项强调'};
+const notes={A:'本轮只完成生成前输入与提示词，不宣称图像已经生成。',B:'图形采用同一尺度：每份12画布像素。日期试改不会触发重新生图或动效制作。',C:'整幅图像整体运动，开场信息完整可见。6秒是明确无声方案的固定时长。',D:'四行底色独立强调；数值、比例和文字始终不变。最后2.4秒完整停留。'};
+function stop(){playing=false;cancelAnimationFrame(frameRequest);playButton.textContent='播放';}
+function setStatus(message){document.getElementById('status').textContent=message;}
+function refreshSources(){
+  const composite=base.cloneNode(true);
+  document.getElementById('panel-B').replaceChildren(composite);
+  document.getElementById('panel-D').replaceChildren();
+  if(route==='D')document.getElementById('panel-D').append(composite);
+  const data=new XMLSerializer().serializeToString(base);
+  const nextUrl=URL.createObjectURL(new Blob([data],{type:'image/svg+xml'}));
+  const oldUrl=flatUrl;flatUrl=nextUrl;
+  const img=document.getElementById('flat-frame');
+  img.onload=()=>{if(oldUrl)URL.revokeObjectURL(oldUrl);};
+  img.onerror=()=>setStatus('整帧图像载入失败，请检查SVG源。');
+  img.src=nextUrl;
+  renderTime();
+}
+function ease(v){return(1-Math.cos(Math.PI*Math.max(0,Math.min(1,v))))/2;}
+function renderTime(){
+  const duration=config.durations[route]||0;
+  if(duration)time=Math.max(0,Math.min(duration,time));
+  slider.value=String(time);
+  document.getElementById('time-number').value=String(Math.round(time*100)/100);
+  document.getElementById('time-label').value=time.toFixed(2)+' / '+duration+'秒';
+  const q=ease(time/6),s=1+0.035*q;
+  document.getElementById('flat-frame').style.transform='translateX('+(-12*q/1920*100)+'%) scale('+s+')';
+  for(let i=0;i<config.data.length;i++){
+    const start=0.8+1.2*i,end=start+1.2;
+    const opacity= Math.min(ease((time-start)/.2),ease((end-time)/.2));
+    const element=document.querySelector('.stage>svg').querySelector('#focus-'+config.data[i].id);
+    if(element)element.setAttribute('opacity',String(opacity));
+  }
+}
+function chooseRoute(next){
+  stop();route=next;time=0;
+  if(route==='B'||route==='D')document.getElementById('panel-'+route).append(document.querySelector('.stage>svg'));
+  for(const name of ['A','B','C','D'])document.getElementById('panel-'+name).hidden=name!==route;
+  for(const button of document.querySelectorAll('[data-route]'))button.setAttribute('aria-pressed',String(button.dataset.route===route));
+  document.getElementById('route-caption').textContent=captions[route];
+  document.getElementById('route-note').textContent=notes[route];
+  document.getElementById('edit-controls').hidden=route!=='B';
+  document.getElementById('time-controls').hidden=!config.durations[route];
+  if(config.durations[route]){slider.max=String(config.durations[route]);document.getElementById('time-number').max=slider.max;}
+  renderTime();
+  setStatus(route==='A'?'提示词已准备，生图未执行。':route==='B'?'静态文件与网页源均已生成。':'明确无声；仅浏览器时间预览，未导出视频。');
+}
+function tick(stamp){
+  if(!playing)return;
+  const delta=(stamp-lastStamp)/1000;lastStamp=stamp;time+=delta;renderTime();
+  if(time>=config.durations[route]){stop();setStatus('预览到达结尾；仍未执行视频渲染。');return;}
+  frameRequest=requestAnimationFrame(tick);
+}
+for(const button of document.querySelectorAll('[data-route]'))button.addEventListener('click',()=>chooseRoute(button.dataset.route));
+slider.addEventListener('input',()=>{stop();time=Number(slider.value);renderTime();});
+document.getElementById('time-number').addEventListener('input',event=>{stop();time=Number(event.target.value);renderTime();});
+playButton.addEventListener('click',()=>{
+  if(playing){stop();return;}
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){setStatus('系统已设置减弱动效，请使用时间滑块查看关键状态。');return;}
+  if(time>=config.durations[route])time=0;
+  playing=true;playButton.textContent='暂停';lastStamp=performance.now();frameRequest=requestAnimationFrame(tick);
+});
+document.getElementById('restart').addEventListener('click',()=>{stop();time=0;renderTime();});
+const editionInput=document.getElementById('edition-input');
+editionInput.addEventListener('input',()=>{base.querySelector('#edition').textContent=editionInput.value;refreshSources();setStatus('已试改当前预览，C/D复用同一内容；未写回磁盘。');});
+document.getElementById('reset-edition').addEventListener('click',()=>{editionInput.value=config.edition;base.querySelector('#edition').textContent=config.edition;refreshSources();setStatus('已恢复原文。');});
+refreshSources();chooseRoute('B');
+</script></html>
